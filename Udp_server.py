@@ -12,3 +12,5 @@ while True:
     data, clientAddress = s.recvfrom(MAX_SIZE_BYTES) # Receive at most 65535 bytes at once
     message = data.decode('ascii')
     upperCaseMessage = message.upper()
+    print('The client at {} says {!r}'.format(clientAddress, message))
+    data = upperCaseMessage.encode('ascii')
