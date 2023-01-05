@@ -10,3 +10,5 @@ s.bind((hostname, port)) # Binding the socket to a port and IP address
 print('Listening at {}'.format(s.getsockname())) # Printing the IP address and port of socket
 while True:
     data, clientAddress = s.recvfrom(MAX_SIZE_BYTES) # Receive at most 65535 bytes at once
+    message = data.decode('ascii')
+    upperCaseMessage = message.upper()
